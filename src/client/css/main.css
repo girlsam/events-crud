@@ -1,8 +1,15 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/*=====================
+main nav bar
+=====================*/
+
+#nav {
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
 }
 
-a {
-  color: #00B7FF;
+.navbar-brand {
+  font-size: 25px;
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  color: black;
 }

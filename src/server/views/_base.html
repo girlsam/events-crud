@@ -9,17 +9,27 @@
     {% if title %}
       <title>{{ title }}</title>
     {% else %}
-      <title>Something. Something. Something.</title>
+      <title>Events - Galvanize</title>
     {% endif %}
     <!-- stylesheets -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/yeti/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/paper/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/main.css">
     {% block css %}{% endblock %}
   </head>
   <body>
-      {% block content %}
-      {% endblock %}
+
+    <nav class="navbar navbar-default" id="nav">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span>&nbsp;&nbsp;Galvanize Events</a>
+        </div>
+      </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <!-- footer -->
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
