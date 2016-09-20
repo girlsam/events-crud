@@ -4,8 +4,8 @@ exports.up = function(knex, Promise) {
     table.string('title').notNullable();
     table.text('description').notNullable();
     table.boolean('over_21').notNullable();
-    table.date('start_datetime').notNullable();
-    table.date('end_datetime').notNullable();
+    table.dateTime('start_datetime').notNullable();
+    table.dateTime('end_datetime').notNullable();
     table.integer('venue_id').references('id').inTable('venues');
     table.timestamps(true, true);
   });
