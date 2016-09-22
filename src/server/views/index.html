@@ -3,5 +3,29 @@
 {% block title %}{% endblock %}
 
 {% block content %}
-
+<body>
+  <div class="container-fluid">
+  <header>
+    <h3 class="displaying-title">Displaying <b>{{events.length}}</b> Upcoming Events...</h3>
+    <br>
+  </header>
+  {% for events in events %}
+  <article class="col-sm-4 col-md-6 col-lg-12">
+    <div class="box">
+      <h4 class="event-title">{{events.title}}</h4>
+      <h6 class="event-time">{{events.start_datetime|date("dddd, MMMM Do")}} from {{events.start_datetime|date("hA")}} - {{events.end_datetime|date("hA")}}</h6>
+      {% if events.over_21 == true %}
+        <p class="text-danger">Must be over 21 to attend!</p>
+      {% else %}
+        <p class="text-success">Open to all ages!</p>
+      {% endif %}
+      <div class="event-article">
+        <p class="event-description">{{events.description}}</p>
+      </div>
+    </div>
+    <hr>
+  </article>
+  {% endfor %}
+  </div>
+</body>
 {% endblock %}

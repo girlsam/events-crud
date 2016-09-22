@@ -2,11 +2,9 @@ const express = require('express');
 const router = express.Router();
 const knex = require('../db/knex');
 
-const indexController = require('../controllers/index');
-
 router.get('/', function (req, res, next) {
   let getEvent =
-  knex('events').orderBy('start_datetime', 'asc')
+  knex('events')
   .then((events) => {
     console.log(events);
     res.render('index', {
