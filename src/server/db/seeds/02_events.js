@@ -10,7 +10,7 @@ exports.seed = function(knex, Promise) {
           over_21: 'false',
           start_datetime: '9/22/2016 14:00:00',
           end_datetime: '9/22/2016 15:30:00',
-          venue_id: 1
+          venue_id: knex('venues').select('id').where('name', 'Steve\'s House')
         }),
         knex('events').insert({
           title: 'The Case for Eggo Waffles',
@@ -18,7 +18,7 @@ exports.seed = function(knex, Promise) {
           over_21: 'false',
           start_datetime: '9/24/2016 12:00:00',
           end_datetime: '9/24/2016 14:00:00',
-          venue_id: 3
+          venue_id: knex('venues').select('id').where('name', 'Castle Byers')
         }),
         knex('events').insert({
           title: 'What Happened The Night Barb Went Upside Down',
@@ -26,7 +26,7 @@ exports.seed = function(knex, Promise) {
           over_21: 'true',
           start_datetime: '9/25/2016 20:00:00',
           end_datetime: '9/25/2016 23:00:00',
-          venue_id: 2
+          venue_id: knex('venues').select('id').where('name', 'Steve\'s House')
         }),
         knex('events').insert({
           title: 'Before There Was Eleven, There Was Ten',
@@ -34,7 +34,7 @@ exports.seed = function(knex, Promise) {
           over_21: 'true',
           start_datetime: '9/23/2016 16:00:00',
           end_datetime: '9/23/2016 18:00:00',
-          venue_id: 2
+          venue_id: knex('venues').select('id').where('name', 'US Department of Energy Lab')
         }),
         knex('events').insert({
           title: 'Kiddie Pool, Salt, Small Child: How to Get to the Upside Down',
@@ -42,7 +42,7 @@ exports.seed = function(knex, Promise) {
           over_21: 'true',
           start_datetime: '9/26/2016 19:00:00',
           end_datetime: '9/26/2016 21:00:00',
-          venue_id: 2
+          venue_id: knex('venues').select('id').where('name', 'US Department of Energy Lab')
         }),
         knex('events').insert({
           title: 'Demagorgon Meet & Greet',
@@ -50,7 +50,7 @@ exports.seed = function(knex, Promise) {
           over_21: 'true',
           start_datetime: '9/23/2016 22:00:00',
           end_datetime: '9/24/2016 02:00:00',
-          venue_id: 1
+          venue_id: knex('venues').select('id').where('name', 'US Department of Energy Lab')
         })
       ]);
     });

@@ -13,14 +13,20 @@
   <article class="col-sm-4 col-md-6 col-lg-12">
     <div class="box">
       <h4 class="event-title">{{events.title}}</h4>
+      {% for venues in venues %}
+        {% if venues.id === events.venue_id %}
+        <h6 class="event-location">Location: {{venues.name}}</h6>
+        {% endif %}
+      {% endfor %}
       <h6 class="event-time">{{events.start_datetime|date("dddd, MMMM Do")}} from {{events.start_datetime|date("hA")}} - {{events.end_datetime|date("hA")}}</h6>
-      {% if events.over_21 == true %}
-        <p class="text-danger">Must be over 21 to attend!</p>
-      {% else %}
-        <p class="text-success">Open to all ages!</p>
-      {% endif %}
+      <a href="/events/{{events.id}}/register" class="register-btn btn btn-default center-block">Register Now!</a>
       <div class="event-article">
         <p class="event-description">{{events.description}}</p>
+        {% if events.over_21 == true %}
+          <p class="text-danger">Must be over 21 to attend!</p>
+        {% else %}
+          <p class="text-success">Open to all ages!</p>
+        {% endif %}
       </div>
     </div>
     <hr>

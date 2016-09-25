@@ -4,5 +4,5 @@ exports.seed = function(knex, Promise) {
     .then(() => knex('attendees').del())
     .then(() => knex('tickets').del())
     .then(() => knex('events').del())
-    .then(() => knex('venues').del())
-}
+    .then(() => knex('venues').del());
+};

@@ -1,0 +1,57 @@
+{% extends "_base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+<body>
+  <div class="container-fluid">
+  <header>
+      {{event}}
+      <div class="title">{{events.title}}</div>
+      <h6 class="event-time">{{events.start_datetime|date("dddd, MMMM Do")}} from {{events.start_datetime|date("hA")}} - {{events.end_datetime|date("hA")}}</h6>
+      <div class="description">{{events.description}}</div>
+      <br>
+  </header>
+  <div class="title">Register</div>
+  <hr>
+  <form class="form-horizontal">
+    <fieldset>
+      <div class="form-group">
+        <label for="preferred_name" class="col-lg-2 control-label text-warning">Preferred First Name</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control" id="preferred_name">
+        </div>
+          <label for="last_name" class="col-lg-2 control-label text-warning">Last Name</label>
+          <div class="col-lg-10">
+            <input type="text" class="form-control" id="last_name">
+          </div>
+          <label for="birthday" class="col-lg-2 control-label text-warning">Date of Birth</label>
+          <div class="col-lg-10">
+            <input type="date" class="form-control" id="birthday">
+          </div>
+          <label for="email_address" class="col-lg-2 control-label text-warning">Email Address</label>
+          <div class="col-lg-10">
+            <input type="email" class="form-control" id="email_address">
+          </div>
+          <label for="ticket_type" class="col-lg-2 control-label text-warning">Ticket Type</label>
+          <div class="col-lg-10">
+            <select class="form-control" id="ticket_type" name="ticket_type">
+        			<option value="" disabled>Select Ticket Type</option>
+            {% for ticket in tickets %}
+            {% if ticket.event_id === events.id %}
+              <option value="{{ticket.id}}">{{ticket.name}}</option>
+            {% endif %}
+          {% endfor %}
+            </select>
+          </div>
+          <br>
+          <div class="col-lg-10 col-lg-offset-2">
+            <button type="submit" class="btn btn-primary">Purchase Ticket</button>
+            <button type="reset" class="btn btn-default">Cancel</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</body>
+{% endblock %}
