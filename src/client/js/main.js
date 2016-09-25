@@ -30,6 +30,5 @@ function validate(date){
   }
   else {
     $('#valid-message').css('visibility', 'visible').css('margin-bottom', '15px').append("You must be at least 21 years old to register.");
-    return "You must be over 21 to attend.";
   }
 }
