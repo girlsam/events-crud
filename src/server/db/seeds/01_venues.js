@@ -1,12 +1,12 @@
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('venues').del()
+  return knex('venues')
     .then(function () {
       return Promise.all([
         // Inserts seed entries
         knex('venues').insert({
           name: 'Steve\'s House',
-          capacity: '25',
+          capacity: '75',
           line_1: '150 Long Dark Road',
           line_2: '',
           city: 'Hawkins',

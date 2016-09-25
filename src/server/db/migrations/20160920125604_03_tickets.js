@@ -3,6 +3,7 @@ exports.up = function(knex, Promise) {
     table.increments();
     table.string('name').notNullable();
     table.string('price').notNullable();
+    table.integer('event_id').references('events.id').unsigned();
     table.timestamps(true, true);
   });
 };

@@ -1,5 +1,8 @@
 (function () {
 
-  console.log('sanity check!');
+  //aligns height of article boxes on index.html
+  $('.box').matchHeight();
 
 })();
+
+console.log('sanity check');

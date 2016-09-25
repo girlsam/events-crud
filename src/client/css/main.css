@@ -10,6 +10,71 @@ main nav bar
 
 .navbar-brand {
   font-size: 25px;
+  font-family: 'Permanent Marker', Arial, sans-serif;
+  color: black;
+}
+
+/*=====================
+events/register page
+=====================*/
+
+.title {
+  font-size: 22px;
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  color: black;
+}
+
+/*=====================
+index events page
+=====================*/
+.displaying-title {
+  font-size 18px;
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  color: black;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.register-btn {
+  /*margin: 10px;*/
+  display: table;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.box {
+  margin-bottom: 10px;
+}
+
+.event-article {
+  height: 190px;
+  text-align: justify;
+  overflow: scroll;
+  margin-bottom: 15px;
+}
+
+.event-title {
+  text-align: center;
+  font-family: 'Permanent Marker', Arial, sans-serif;
+}
+
+.event-time {
+  font-size: 12px;
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  color: black;
+  text-align: center;
+}
+
+.event-location {
+  font-size: 14px;
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  color: black;
+  text-align: center;
+}
+
+.event-description {
+  font-size: 12px;
   font-family: 'Roboto Slab', Arial, sans-serif;
   color: black;
 }
