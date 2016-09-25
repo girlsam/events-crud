@@ -24,6 +24,12 @@ events/register page
   color: black;
 }
 
+#valid-message {
+  visibility: hidden;
+  margin-bottom: -15px;
+  margin: 5px;
+}
+
 /*=====================
 index events page
 =====================*/

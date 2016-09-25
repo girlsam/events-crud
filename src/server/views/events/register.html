@@ -6,11 +6,14 @@
 <body>
   <div class="container-fluid">
   <header>
-      {{event}}
-      <div class="title">{{events.title}}</div>
-      <h6 class="event-time">{{events.start_datetime|date("dddd, MMMM Do")}} from {{events.start_datetime|date("hA")}} - {{events.end_datetime|date("hA")}}</h6>
-      <div class="description">{{events.description}}</div>
-      <br>
+    <div class="title">{{events.title}}</div>
+    <h6 class="event-time">{{events.start_datetime|date("dddd, MMMM Do")}} from {{events.start_datetime|date("hA")}} - {{events.end_datetime|date("hA")}}</h6>
+    <div class="description">{{events.description}}</div>
+    {% if events.over_21 == true %}
+      <p class="text-danger" id="over21">Must be over 21 to attend!</p>
+    {% else %}
+      <p class="text-success" id="under21">Open to all ages!</p>
+    {% endif %}
   </header>
   <div class="title">Register</div>
   <hr>
@@ -28,6 +31,7 @@
           <label for="birthday" class="col-lg-2 control-label text-warning">Date of Birth</label>
           <div class="col-lg-10">
             <input type="date" class="form-control" id="birthday">
+            <div id="valid-message" class="alert alert-dismissible alert-danger"></div>
           </div>
           <label for="email_address" class="col-lg-2 control-label text-warning">Email Address</label>
           <div class="col-lg-10">
