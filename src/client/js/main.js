@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 (function () {
 
   //aligns height of article boxes on index.html
@@ -19,16 +21,16 @@ $('#birthday').on('blur', function() {
 
 //helper functions
 //momentjs script to validate birthday
-function validate(date){
-  var twentyOneYears = moment().subtract(21, "years");
+function validate(date) {
+  var twentyOneYears = moment().subtract(21, 'years');
   var birthday = moment(date);
   if (!birthday.isValid()) {
-    $('#valid-message').css('visibility', 'visible', 'margin-bottom', '15px').append("Please enter a valid birthday.");
+    $('#valid-message').css('visibility', 'visible', 'margin-bottom', '15px').append('Please enter a valid birthday.');
   }
   else if (twentyOneYears.isAfter(birthday)) {
     return 'valid';
   }
   else {
-    $('#valid-message').css('visibility', 'visible').css('margin-bottom', '15px').append("You must be at least 21 years old to register.");
+    $('#valid-message').css('visibility', 'visible').css('margin-bottom', '15px').append('You must be at least 21 years old to register.');
   }
 }
