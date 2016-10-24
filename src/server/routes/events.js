@@ -36,4 +36,20 @@ router.get('/:id/register', (req, res, next) => {
   });
 });
 
+router.post('/:id/register/new', (req, res, next) => {
+  let eventID = req.params.id;
+  let newRegister = {
+    preferred_name: req.body.preferred_name,
+    last_name: req.body.last_name,
+    birthday: req.body.birthday,
+    email: req.body.email
+  };
+  let newTicket = {
+    name: req.body.ticket_name
+  },
+  let registeredEvent = {
+    id: eventID
+  }
+});
+
 module.exports = router;
