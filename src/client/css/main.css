@@ -1,7 +1,6 @@
 /*=====================
 main nav bar
 =====================*/
-
 #nav {
   margin-left: 0px;
   margin-right: 0px;
@@ -14,10 +13,13 @@ main nav bar
   color: black;
 }
 
+.nav-dropwdown {
+  width: 100px;
+}
+
 /*=====================
 events/register page
 =====================*/
-
 .title {
   font-size: 22px;
   font-family: 'Roboto Slab', Arial, sans-serif;
@@ -25,7 +27,7 @@ events/register page
 }
 
 #valid-message {
-  visibility: hidden;
+  display: none;
   margin-bottom: -15px;
   margin: 5px;
 }
@@ -95,6 +97,12 @@ attendee page
 
 .attendee-displaying {
   font-size: 28px;
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  color: black;
+}
+
+.ticket-type {
+  font-size: 12px;
   font-family: 'Roboto Slab', Arial, sans-serif;
   color: black;
 }

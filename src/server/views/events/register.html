@@ -14,11 +14,11 @@
     {% else %}
       <p class="text-success" id="under21">Open to all ages!</p>
     {% endif %}
-    <!-- {% for venue in venues%} -->
+    {% for venue in venues%}
       {% if venue.id === events.venue_id %}
-        <p>{{venue.capacity}}</p>
+        <p>{{capacity.length}}/{{venue.capacity}}</p>
       {% endif %}
-    <!-- {% endfor %} -->
+    {% endfor %}
   </header>
   <div class="title">Register</div>
   <hr>

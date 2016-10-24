@@ -9,7 +9,7 @@
     {% if title %}
       <title>{{ title }}</title>
     {% else %}
-      <title>Events - Galvanize</title>
+      <title>Stranger Events</title>
     {% endif %}
     <!-- stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Permanent+Marker" rel="stylesheet">
@@ -22,15 +22,30 @@
     <!-- navbar -->
     <nav class="navbar navbar-default" id="nav">
       <div class="container-fluid">
+        <!-- nav branding -->
         <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <a class="navbar-brand" href="/"><i class="fa fa-user-secret" aria-hidden="true"></i>&nbsp;Stranger Events</a>
         </div>
-        <div class="collapse navbar-collapse">
+      <!-- dropdown search for events -->
+        <div class="navbar-collapse collapse in" id="bs-example-navbar-collapse-1" aria-expanded="true">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">SEARCH &nbsp;<span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;SEARCH EVENT<span class="caret"></span></a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;SEARCH ATTENDEE <span class="caret"></span></a>
+            </li>
           </ul>
+        </div>
       </div>
     </nav>
+        <!-- dropdown search for attendees -->
     {% block content %}
     {% endblock %}
     <!-- footer -->
@@ -38,8 +53,8 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
-    <script type="text/javascript" src="/js/main.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.4.0/moment.min.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
     {% block scripts %}{% endblock %}
   </body>
 </html>
