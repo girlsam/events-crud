@@ -17,6 +17,8 @@
     path.join(__dirname, '..', 'views')
   ];
 
+  console.log(process.env.NODE_ENV);
+
   // *** load environment variables *** //
   if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
