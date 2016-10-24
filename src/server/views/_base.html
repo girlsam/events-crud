@@ -20,9 +20,8 @@
   </head>
   <body>
     <!-- navbar -->
-    <nav class="navbar navbar-default" id="nav">
+    <nav class="navbar navbar-default">
       <div class="container-fluid">
-        <!-- nav branding -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span>
@@ -32,20 +31,15 @@
           </button>
           <a class="navbar-brand" href="/"><i class="fa fa-user-secret" aria-hidden="true"></i>&nbsp;Stranger Events</a>
         </div>
-      <!-- dropdown search for events -->
-        <div class="navbar-collapse collapse in" id="bs-example-navbar-collapse-1" aria-expanded="true">
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;SEARCH EVENT<span class="caret"></span></a>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;SEARCH ATTENDEE <span class="caret"></span></a>
-            </li>
+            <li><a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;SEARCH EVENTS</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;SEARCH ATTENDEES</a></li>
           </ul>
         </div>
       </div>
     </nav>
-        <!-- dropdown search for attendees -->
     {% block content %}
     {% endblock %}
     <!-- footer -->
