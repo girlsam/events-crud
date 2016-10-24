@@ -1,8 +1,8 @@
-const faker = require('faker');
+var faker = require('faker');
 
 exports.seed = function(knex, Promise) {
-  let numberOfArrays = new Array(200);
-  let arrayOfAttendees = Array.from(numberOfArrays).map(() => {
+  var numberOfArrays = new Array(200);
+  var arrayOfAttendees = Array.from(numberOfArrays).map(() => {
     return generateAttendee(knex);
   });
   return Promise.all(arrayOfAttendees);
