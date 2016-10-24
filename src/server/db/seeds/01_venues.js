@@ -6,7 +6,7 @@ exports.seed = function(knex, Promise) {
         // Inserts seed entries
         knex('venues').insert({
           name: 'Steve\'s House',
-          capacity: '75',
+          capacity: '95',
           line_1: '150 Long Dark Road',
           line_2: '',
           city: 'Hawkins',
