@@ -8,15 +8,15 @@ router.get('/:id', function (req, res, next) {
   let getAttendee =
   knex('attendees').where('attendees.id', id).first();
   let getEvents =
-  knex.raw('SELECT DISTINCT venues.capacity, venues.name, venues.id FROM venues JOIN events ON venues.id = events.venue_id');
+  knex.raw('select attendees.preferred_name, attendees.last_name, tickets_attendees.ticket_id, tickets_attendees.attendee_id, tickets.name, events.title, events.id FROM attendees JOIN tickets_attendees ON attendees.id = tickets_attendees.attendee_id JOIN tickets ON tickets_attendees.ticket_id = tickets.id JOIN events ON tickets.event_id = events.id');
   Promise.all([
     getAttendee,
     getEvents
   ])
   .then((results) => {
-    console.log(results);
-    const renderObject = {};
+    let renderObject = {};
     renderObject.attendee = results[0];
+    renderObject.attendee_events = results[1].rows;
     res.render('attendees/attendee', renderObject);
   });
 });

@@ -24,7 +24,7 @@ exports.seed = function(knex, Promise) {
         }),
         knex('venues').insert({
           name: 'Castle Byers',
-          capacity: '10',
+          capacity: '50',
           line_1: 'Deep in the Woods',
           line_2: '',
           city: 'Hawkins',
