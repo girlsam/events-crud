@@ -35,7 +35,6 @@
   "onevar": true,
   "plusplus": false,
   "regexp": false,
-  "undef": true,
   "sub": true,
   "strict": false,
   "white": true,

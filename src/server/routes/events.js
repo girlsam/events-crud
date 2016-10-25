@@ -36,8 +36,9 @@ router.get('/:id/register', (req, res, next) => {
   });
 });
 
-router.post('/:id/register/new', (req, res, next) => {
+router.post(':id/register/new', (req, res, next) => {
   let eventID = req.params.id;
+  console.log(eventID);
   let newRegister = {
     preferred_name: req.body.preferred_name,
     last_name: req.body.last_name,
@@ -46,10 +47,13 @@ router.post('/:id/register/new', (req, res, next) => {
   };
   let newTicket = {
     name: req.body.ticket_name
-  },
+  };
   let registeredEvent = {
     id: eventID
-  }
+  };
+  console.log('new register', newRegister);
+  console.log('new ticket', newTicket);
+  console.log('registered event', registeredEvent);
 });
 
 module.exports = router;

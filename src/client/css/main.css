@@ -32,6 +32,17 @@ events/register page
   margin: 5px;
 }
 
+.over-capacity {
+  font-size: 2em;
+  font-weight: 400;
+  color: red;
+  text-align: center;
+}
+
+.seats-remaining {
+  font-weight: 600;
+}
+
 /*=====================
 index events page
 =====================*/
