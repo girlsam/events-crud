@@ -18,6 +18,7 @@ To Run This Application Locally:
 1. Fork and clone this repository
 1. Run ```npm i``` in the application's root folder
 1. Create a PostgreSQL database titled ```events_crud```
+1. You may also need to create a .env file, in which case, add ```NODE_ENV=development``` to that file
 1. To seed the database, run knex migration commands:
   - ```knex migrate:latest```
   - ```knex seed:run```
