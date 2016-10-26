@@ -1,10 +1,11 @@
 ## StrangerEvents
 Deployed Site: [StrangerEvents](http://strangerevents.herokuapp.com)
 
-Inspired by "Stranger Things", StrangerEvents is a registration site for a hypothetical conference based on the Netflix series. Although the site relies on dummy data, it functions as a front-to-back CRUD application. 
+Inspired by "Stranger Things", StrangerEvents is a registration site for a hypothetical conference based on the Netflix series. Although the site relies on dummy data, it functions as a front-to-back CRUD application.
 
 
 To Run This Application Locally:
+
 1. Fork and clone this repository
 1. Run ```npm i``` in the application's root folder
 1. Create a PostgreSQL database titled ```events_crud```
