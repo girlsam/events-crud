@@ -22,7 +22,7 @@
           <p class="seats-remaining">{{venue.capacity - capacity.length}} seats remaining. Register below!</p>
           <div class="title text-center">Register</div>
           <hr>
-          <form class="form-horizontal" method="post" action="{{events.id}}/register/new">
+          <form class="form-horizontal" method="post" action="/events/{{events.id}}/register">
             <fieldset>
               <div class="form-group">
                 <label for="preferred_name" class="col-lg-2 control-label text-warning">Preferred First Name</label>
