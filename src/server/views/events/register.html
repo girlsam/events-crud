@@ -13,7 +13,7 @@
     {% else %}
       <p class="text-success text-center" id="under21">Open to all ages.</p>
     {% endif %}
-    <div class="description">{{events.description}}</div>
+    <div class="event-description">{{events.description}}</div>
     {% for venue in venues%}
       {% if venue.id === events.venue_id %}
         {% if (venue.capacity - capacity.length) < 0 %}
