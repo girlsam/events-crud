@@ -18,7 +18,6 @@ router.get('/', function (req, res, next) {
     const renderObject = {};
     renderObject.events = results[0];
     renderObject.venues = results[1].rows;
-    console.log(results[1].rows);
     res.render('index', renderObject);
   });
 });

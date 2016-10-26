@@ -2,7 +2,35 @@ const express = require('express');
 const router = express.Router();
 const knex = require('../db/knex');
 
-//landing page that lists events
+//list of all attendees
+router.get('/', function(req, res, next) {
+  let getAttendees = knex('attendees');
+  let getAttendeeEvents =
+  knex('attendees')
+  .select('tickets_attendees.attendee_id', 'tickets.name', 'events.title', 'events.id')
+  .join('tickets_attendees', 'attendees.id', 'tickets_attendees.attendee_id')
+  .join('tickets', 'tickets_attendees.ticket_id', 'tickets.id')
+  .join('events', 'tickets.event_id', 'events.id')
+  .distinct('events.title');
+  Promise.all([
+    getAttendees,
+    getAttendeeEvents
+  ])
+  .then((results) => {
+    let renderObject = {};
+    renderObject.attendees = results[0];
+    renderObject.events = results[1];
+    res.render('attendees/attendees', renderObject);
+  })
+  .catch((err) => {
+    res.json({
+      status: 'Error',
+      message: 'Unable to fulfill request.'
+    });
+  });
+});
+
+//landing page that attendees' event(s)
 router.get('/:id', function (req, res, next) {
   const id = parseInt(req.params.id);
   let getAttendee =
