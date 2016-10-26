@@ -13,6 +13,18 @@ $('#birthday').on('blur', function() {
   }
 });
 
+//interactive search
+var $rows = $('#table tr');
+$('#focusedInput').keyup(function() {
+  var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+      reg = RegExp(val, 'i'),
+      text;
+  $rows.show().filter(function() {
+      text = $(this).text().replace(/\s+/g, ' ');
+      return !reg.test(text);
+  }).hide();
+});
+
 //helper functions
 //momentjs script to validate birthday
 function validate(date) {
