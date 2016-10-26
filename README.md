@@ -24,4 +24,6 @@ To Run This Application Locally:
   - ```knex seed:run```
 1. Run ```gulp```  
 
+Next steps: This application is not complete. I plan on refactoring much of the server-side querying to enhance code readability.
+
 Last Updated: October 26, 2016
