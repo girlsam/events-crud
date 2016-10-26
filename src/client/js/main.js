@@ -32,11 +32,9 @@ function validate(date) {
   var birthday = moment(date);
   if (!birthday.isValid()) {
     $('#valid-message').css('display', 'block', 'margin-bottom', '15px').append('Please enter a valid birthday.');
-  }
-  else if (twentyOneYears.isAfter(birthday)) {
-    return 'valid';
-  }
-  else {
+  } else if (twentyOneYears.isAfter(birthday)) {
+    $('#valid-message').css('display', 'none');
+  } else {
     $('#valid-message').css('display', 'block').css('margin-bottom', '15px').append('You must be at least 21 years old to register.');
   }
 }
