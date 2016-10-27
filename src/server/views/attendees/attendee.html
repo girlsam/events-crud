@@ -8,12 +8,15 @@
   <div class="container-fluid">
     <header class="attendee-displaying"> Attendee Schedule For: <strong>{{attendee.preferred_name}} {{attendee.last_name}}</strong></header>
   <!-- displaying attendee events -->
-  {% for event in attendee_events %}
-  {% if attendee.id === event.attendee_id %}
+  <div class="jumbotron">
+    {% for event in attendee_events %}
+
+    {% if attendee.id === event.attendee_id %}
     <div class="title">{{event.title}}</div>
     <div class="ticket-type">Tickets: {{event.name}}</div>
-  {% endif %}
-{% endfor %}
+    {% endif %}
+  {% endfor %}
+  </div>
   </div>
 </body>
 {% endblock %}

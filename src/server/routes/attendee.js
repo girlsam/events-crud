@@ -36,7 +36,13 @@ router.get('/:id', function (req, res, next) {
   let getAttendee =
   knex('attendees').where('attendees.id', id).first();
   let getEvents =
-  knex.raw('select attendees.preferred_name, attendees.last_name, tickets_attendees.ticket_id, tickets_attendees.attendee_id, tickets.name, events.title, events.id FROM attendees JOIN tickets_attendees ON attendees.id = tickets_attendees.attendee_id JOIN tickets ON tickets_attendees.ticket_id = tickets.id JOIN events ON tickets.event_id = events.id');
+  knex('attendees')
+  .distinct('events.title')
+  .select('tickets_attendees.ticket_id', 'tickets_attendees.attendee_id', 'tickets.name', 'events.title', 'events.id')
+  .join('tickets_attendees', 'attendees.id', 'tickets_attendees.attendee_id')
+  .join('tickets', 'tickets_attendees.ticket_id', 'tickets.id')
+  .join('events', 'tickets.event_id', 'events.id')
+  .where('tickets_attendees.attendee_id', id);
   Promise.all([
     getAttendee,
     getEvents
@@ -44,9 +50,33 @@ router.get('/:id', function (req, res, next) {
   .then((results) => {
     let renderObject = {};
     renderObject.attendee = results[0];
-    renderObject.attendee_events = results[1].rows;
+    renderObject.attendee_events = filterResult(results[1]);
+    console.log(renderObject.attendee_events);
     res.render('attendees/attendee', renderObject);
+  })
+  .catch((err) => {
+    console.log(err);
   });
 });
+
+function convertToArr(str) {
+
+}
+
+//helper function
+function filterResult(arr) {
+  return arr.map((c, i, arr) => {
+    //remove c.name into another function
+    c.name = [c.name];
+    console.log(c.name);
+    arr.forEach((el) => {
+      if (el.id === c.id) {
+        c.name.push(el.name);
+        console.log(c.name);
+      }
+    });
+    return c;
+  });
+}
 
 module.exports = router;
