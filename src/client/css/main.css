@@ -1,119 +1,108 @@
 /*=====================
+Imports
+=====================*/
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto+Slab");
+/*=====================
+Variables
+=====================*/
+/*=====================
+Mix-ins
+=====================*/
+/*=====================
 main nav bar
 =====================*/
 #nav {
   margin-left: 0px;
   margin-right: 0px;
-  width: 100%;
-}
+  width: 100%; }
 
 .navbar-brand {
-  font-size: 25px;
-  font-family: 'Permanent Marker', Arial, sans-serif;
+  font-family: "Permanent Marker", Arial, sans-serif;
   color: black;
-}
-
-.nav-dropwdown {
-  width: 100px;
-}
+  font-size: 2em; }
 
 /*=====================
 events/register page
 =====================*/
 .title {
+  font-family: "Roboto Slab", Arial, sans-serif;
   font-size: 22px;
-  font-family: 'Roboto Slab', Arial, sans-serif;
   color: black;
-}
+  text-align: inherit; }
 
 #valid-message {
   display: none;
   margin-bottom: -15px;
-  margin: 5px;
-}
+  margin: 5px; }
 
 .over-capacity {
   font-size: 2em;
   font-weight: 400;
   color: red;
-  text-align: center;
-}
+  text-align: center; }
 
 .seats-remaining {
-  font-weight: 600;
-}
+  font-weight: 600; }
 
 /*=====================
 index events page
 =====================*/
-.displaying-title {
-  font-size 18px;
-  font-family: 'Roboto Slab', Arial, sans-serif;
+.event-title {
+  font-family: "Permanent Marker", Arial, sans-serif;
   color: black;
-  margin-bottom: 35px;
+  font-size: 2em;
+  text-align: center; }
+
+.event-description, .event-time, .ticket-type {
+  font-family: "Roboto Slab", Arial, sans-serif;
+  font-size: 12px;
+  color: black;
+  text-align: inherit; }
+
+.event-time {
+  text-align: center; }
+
+.event-location {
+  font-family: "Roboto Slab", Arial, sans-serif;
+  font-size: 14px;
+  color: black;
+  text-align: center; }
+
+.displaying-title {
+  font-family: "Roboto Slab", Arial, sans-serif;
+  font-size: 2em;
+  color: black;
   text-align: center;
-}
+  margin-bottom: 35px; }
+
+.box {
+  margin-bottom: 10px; }
 
 .register-btn {
   display: table;
   margin: 0 auto;
   margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-.box {
-  margin-bottom: 10px;
-}
+  margin-bottom: 10px; }
 
 .event-article {
   height: 190px;
   text-align: justify;
   overflow: scroll;
-  margin-bottom: 15px;
-}
-
-.event-title {
-  text-align: center;
-  font-family: 'Permanent Marker', Arial, sans-serif;
-}
-
-.event-time {
-  font-size: 12px;
-  font-family: 'Roboto Slab', Arial, sans-serif;
-  color: black;
-  text-align: center;
-}
-
-.event-location {
-  font-size: 14px;
-  font-family: 'Roboto Slab', Arial, sans-serif;
-  color: black;
-  text-align: center;
-}
-
-.event-description {
-  font-size: 12px;
-  font-family: 'Roboto Slab', Arial, sans-serif;
-  color: black;
-}
+  margin-bottom: 15px; }
 
 /*=====================
 attendee page
 =====================*/
-.attendee-name {
-  font-size: 22px;
-  font-family: 'Roboto Slab', Arial, sans-serif;
-  color: black;
-}
-
 .attendee-displaying {
+  font-family: "Roboto Slab", Arial, sans-serif;
   font-size: 28px;
-  font-family: 'Roboto Slab', Arial, sans-serif;
   color: black;
-}
+  text-align: inherit; }
 
-.ticket-type {
-  font-size: 12px;
-  font-family: 'Roboto Slab', Arial, sans-serif;
+.attendee-name {
+  font-family: "Roboto Slab", Arial, sans-serif;
+  font-size: 22px;
   color: black;
-}
+  text-align: inherit; }
+
+/*# sourceMappingURL=main.css.map */

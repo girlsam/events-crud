@@ -1,0 +1,108 @@
+/*=====================
+Imports
+=====================*/
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto+Slab');
+
+/*=====================
+Variables
+=====================*/
+$logo-font: 'Permanent Marker', Arial, sans-serif;
+$body-font: 'Roboto Slab', Arial, sans-serif;
+
+/*=====================
+Mix-ins
+=====================*/
+@mixin article-text($color, $size, $align) {
+  font-family: $body-font;
+  font-size: $size;
+  color: $color;
+  text-align: $align;
+}
+
+@mixin branding-font($color, $size) {
+  font-family: $logo-font;
+  color: $color;
+  font-size: $size;
+}
+
+/*=====================
+main nav bar
+=====================*/
+#nav {
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+}
+
+.navbar-brand { @include branding-font(black, 2em); }
+
+/*=====================
+events/register page
+=====================*/
+.title { @include article-text(black, 22px, inherit); }
+
+#valid-message {
+  display: none;
+  margin-bottom: -15px;
+  margin: 5px;
+}
+
+.over-capacity {
+  font-size: 2em;
+  font-weight: 400;
+  color: red;
+  text-align: center;
+}
+
+.seats-remaining {
+  font-weight: 600;
+}
+
+/*=====================
+index events page
+=====================*/
+.event-title {
+  @include branding-font(black, 2em);
+  text-align: center;
+}
+
+.event-description { @include article-text(black, 12px, inherit); }
+
+.event-time {
+  @extend .event-description;
+  text-align: center;
+}
+
+.event-location { @include article-text(black, 14px, center); }
+
+.displaying-title {
+  @include article-text(black, 2em, center);
+  margin-bottom: 35px;
+}
+
+.box {
+  margin-bottom: 10px;
+}
+
+.register-btn {
+  display: table;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.event-article {
+  height: 190px;
+  text-align: justify;
+  overflow: scroll;
+  margin-bottom: 15px;
+}
+
+/*=====================
+attendee page
+=====================*/
+.attendee-displaying { @include article-text(black, 28px, inherit); }
+
+.attendee-name { @include article-text(black, 22px, inherit); }
+
+.ticket-type { @extend .event-description; }
